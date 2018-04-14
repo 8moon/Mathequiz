@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+</head>
+<body>
+<header>
+<h1> Registrierung </h2>
+</header>
+<nav>
+	<p>
+				<a href="../index.html">Startseite</a>
+				<a href="spieleseite.html">Spieleseite</a>
+                <a href="bestenliste.html">Bestenliste</a>
+	</p>	
+</nav>
+	<form action ="input_text.htm">
+		Anrede
+		<br>
+		<input type="radio" name="room" id="r1" value="Herr"checked>
+		<label for="r1">Herr</label><br>
+		<input type="radio" name="room" id="r2" value="Frau">
+		<label for="r2">Frau</label><br>
+		<p> Vorname  : <br><input required  type="text" name ="Vorname"size ="30" maxlength="30"  ><p/>
+		<p> Nachname : <br><input required  type="text"  name =" Nachname"size="30" maxlength="30"><p/>
+		<p> Username : <br><input required  type="text" name ="username" size="30" maxlength="30"><p/>
+		<p> E-Mail  : <br><input  required  type="text" name ="E-Mail"  size ="30" maxlength="30"><p/>
+		<p> Passwort : <br><input required  type = "password" size="10" maxlength= "10"><p/>
+		<p> Passwort bestätigen : <br><input required type = "password" size="10" maxlength= "10"><p/>
+		<button type = "submit"
+				name = "Subscribe"
+				formaction="/servlets/subscribeServlet"
+				formmethod="post">Abschicken</button>
+	</form>
+	<footer>
+			<p>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="faq.html">FAQ</a>
+                <a href="impressum.html">Impressum</a>
+            </p>
+	</footer>
+</body>
+</html>
