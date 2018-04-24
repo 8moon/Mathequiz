@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+</head>
+<body>
+<header>
+	<h1> Profil </h1>
+</header>
+<nav>
+	<p>
+				<a href="../index.html">Startseite</a>
+				<a href="spieleseite.html">Spieleseite</a>
+                <a href="bestenliste.html">Bestenliste</a>
+	</p>	
+</nav>
+	<form method = "post" enctype="multipart/dorm-data">
+		<p> Profilfoto auswählen:
+		<br>
+			<input type = "file" name="bild" accept ="image/*">
+		</p>
+	</form>
+		<form name="ProfilForm" action="ProfilServlet" method="post">
+		Anrede
+		<br>
+		<input type="radio" name="room" id="r1" value="Herr"checked>
+		<label for="r1">Herr</label><br>
+		<input type="radio" name="room" id="r2" value="Frau">
+		<label for="r2">Frau</label><br>
+		<p> Vorname  : <br><input name ="Vorname" type="text" size ="30" maxlength="30"><p/>
+		<p> Nachname : <br><input name =" Nachname" type="text" size="30" maxlength="30"><p/>
+		<p> Username : <br><input name ="username" type="text" size="30" maxlength="30"><p/>
+		<p> E-Mail  : <br><input name ="E-Mail" type="text" size ="30" maxlength="30"><p/>
+		<p> Altes Passwort : <br><input type = "password" size="10" maxlength= "10"><p/>
+		<p> Neues Passwort : <br><input type = "password" size="10" maxlength= "10"><p/>
+		<p> Neues Passwort bestaetigen : <br><input type = "password" size="10" maxlength= "10"><p/>
+		<input type  = "button" name= "text 1" value ="Passwort ändern">
+		<br>
+		<br>
+		<input type  = "button" name= "text 2" value ="Account löschen">
+	</form>
+	<br>
+			<footer>
+			<p>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="faq.html">FAQ</a>
+                <a href="impressum.html">Impressum</a>
+            </p>
+		</footer>
+</body>
+</html>
