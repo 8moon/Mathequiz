@@ -12,10 +12,6 @@ CREATE TABLE user(
 CREATE TABLE game(
   GameId BIGINT(20) ,
   UserId BIGINT(20) ,
-  ExerciseNumber INT NOT NULL ,
-  Exercise VARCHAR(500) NOT NULL ,
-  ExerciseSolution INT NOT NULL ,
-  UserSolution INT NOT NULL ,
   StartGamingTime DATETIME NOT NULL ,
   EndGamingTime DATETIME NOT NULL ,
   GameDate DATE NOT NULL ,
