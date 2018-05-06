@@ -1,0 +1,34 @@
+CREATE TABLE user(
+  UserId BIGINT(20) PRIMARY KEY ,
+  FirstName VARCHAR(20) NOT NULL ,
+  LastName VARCHAR(20) NOT NULL ,
+  UserName VARCHAR(15) NOT NULL UNIQUE ,
+  Email VARCHAR(100) NOT NULL UNIQUE ,
+  Password VARCHAR(50) NOT NULL ,
+  Gender VARCHAR(10) ,
+  ProfilePictureName VARCHAR(255),
+  ProfilePictureFile MEDIUMBLOB
+);
+CREATE TABLE game(
+  GameId BIGINT(20) ,
+  UserId BIGINT(20) ,
+  ExerciseNumber INT NOT NULL ,
+  Exercise VARCHAR(500) NOT NULL ,
+  ExerciseSolution INT NOT NULL ,
+  UserSolution INT NOT NULL ,
+  StartGamingTime DATETIME NOT NULL ,
+  EndGamingTime DATETIME NOT NULL ,
+  GameDate DATE NOT NULL ,
+  GameType VARCHAR(100) NOT NULL ,
+  GameDifficulty VARCHAR(100) NOT NULL ,
+  PRIMARY KEY (GameId, UserId),
+  FOREIGN KEY (UserId) REFERENCES user (UserId) ON UPDATE CASCADE ON DELETE CASCADE
+);
+CREATE TABLE exercise(
+  GameId Bigint(20) PRIMARY KEY,
+  ExerciseNumber int NOT null,
+  Exercise varchar(500) not null,
+  ExerciseSolution int NOT null,
+  UserSolution int Not null,
+  FOREIGN KEY (GameId) REFERENCES game(GameId) ON UPDATE CASCADE on DELETE CASCADE);
+ALTER TABLE game DROP UserSolution;
