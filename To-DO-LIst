@@ -1,0 +1,10 @@
+jsp anpasssen an die datenbank
+servlets auch
+
+passwort vergleichen bei der jsp; dass dort das gleiche passwort ist nachschauen
+registrierung jsp = passwort ändern mindestanzahl, username, passwort bestätigen
+registrierungsservlets keine doppelte username 
+Seite ausloggen
+ 
+benutzer admin funktion (update,delete,create)
+ 
