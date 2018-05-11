@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import DatenBean.Profil;
@@ -27,50 +28,51 @@ public class ProfilServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		final String vorname = request.getParameter("vorname");
-		final String nachname = request.getParameter("nachname");
-		final String benutzername = request.getParameter("benutzername");
+		final String firstname = request.getParameter("firstname");
+		final String lastname = request.getParameter("lastname");
+		final String username = request.getParameter("username");
 		final String email = request.getParameter("email");
-		final String altesPasswort = request.getParameter("altesPasswort");
-		final String neuesPasswort = request.getParameter("neuesPasswort");
-		final String passwortBestätigen = request.getParameter("passwortBestätigen");
+		final String oldPassword = request.getParameter("oldPassword");
+		final String newPassword = request.getParameter("newPassword");
+		final String passwortConfirmation = request.getParameter("passwortConfirmation");
 
+		
 		// neues Objekt wo die Daten gespeichert werden in der Methode speichern
-		Profil proto = new Profil(vorname, nachname, benutzername, email, altesPasswort, neuesPasswort,
-				passwortBestätigen);
+		Profil proto = new Profil(firstname, lastname, username, email, oldPassword, newPassword,passwortConfirmation);
 		speichern(proto);
 
 		// weiterleiten an die jsp
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("profil.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 		dispatcher.forward(request, response);
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+//		HttpSession session = request.getSession(false);
+//		if(session!=null) {
+//			String username = (String)session.getAttribute("Username");
+//			System.out.print("Hallo"+username+"Welcome to Profil");
+//		}else {
+//			System.out.print("Please log in first");
+//			request.getRequestDispatcher("login.jsp").include(request, response);
+//		}
 
 	}
 
 	// Methode zum speichern in der datenbank
 	private void speichern(Profil form) throws ServletException{
-			String [] generatedKeys = new String[] {"id"};
 			try(Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("Insert into profil(vorname, nachname, benutzername,email, neuesPasswort,altesPasswort, passwortBesätigen)VALUES(?,?,?,?,?,?,?)",generatedKeys)){
-				pstmt.setString(1, form.getVorname());
-				pstmt.setString(2, form.getNachname());
-				pstmt.setString(3, form.getBenutzername());
+				PreparedStatement pstmt = con.prepareStatement("Insert into user(firstname, lastname, username,email, newPassword,oldPassword, passwordConfirmation)VALUES(?,?,?,?,?,?,?)")){
+				pstmt.setString(1, form.getFirstname());
+				pstmt.setString(2, form.getLastname());
+				pstmt.setString(3, form.getUsername());
 				pstmt.setString(4, form.getEmail());
-				pstmt.setString(5, form.getAltesPasswort());
-				pstmt.setString(6, form.getNeuesPasswort());
-				pstmt.setString(7, form.getPasswortBestätigen());
+				pstmt.setString(5, form.getOldPassword());
+				pstmt.setString(6, form.getNewPassword());
+				pstmt.setString(7, form.getPasswortConfirmation());
 				pstmt.executeUpdate();
 				
 		
-				try(ResultSet rs= pstmt.getGeneratedKeys()){
-					while(rs.next()) {
-						form.setId(rs.getInt(1));
-					}
-				}
 			}catch(Exception ex)
 	{
 		throw new ServletException(ex.getMessage());

@@ -11,56 +11,52 @@ import javax.ejb.Stateless;
 @Stateless
 @LocalBean
 public class Profil implements Serializable {
+
+
 	private static final long serialVersionUID = 1L;
 	int id;
-	private String vorname;
-	private String nachname;
-	private String benutzername;
+	private String firstname;
+	private String lastname;
+	private String username;
 	private String email;
-	private String altesPasswort;
-	private String neuesPasswort;
-	private String passwortBestätigen;
+	private String oldPassword;
+	private String newPassword;
+	private String passwortConfirmation;
 
-	public Profil(String vorname, String nachname, String benutzername, String email, String altesPasswort,
-			String neuesPasswort, String passwortBestätigen) {
+	public Profil(String firstname, String lastname, String username, String email, String oldPassword,
+			String newPassword, String passwortConfirmation) {
 		super();
-		this.vorname = vorname;
-		this.nachname = nachname;
-		this.benutzername = benutzername;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.username = username;
 		this.email = email;
-		this.altesPasswort = altesPasswort;
-		this.neuesPasswort = neuesPasswort;
-		this.passwortBestätigen = passwortBestätigen;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
+		this.oldPassword = oldPassword;
+		this.newPassword = newPassword;
+		this.passwortConfirmation = passwortConfirmation;
 	}
 
-	public String getVorname() {
-		return vorname;
+	public String getFirstname() {
+		return firstname;
 	}
 
-	public void setVorname(String vorname) {
-		this.vorname = vorname;
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
 
-	public String getNachname() {
-		return nachname;
+	public String getLastname() {
+		return lastname;
 	}
 
-	public void setNachname(String nachname) {
-		this.nachname = nachname;
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
 	}
 
-	public String getBenutzername() {
-		return benutzername;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setBenutzername(String benutzername) {
-		this.benutzername = benutzername;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getEmail() {
@@ -71,28 +67,36 @@ public class Profil implements Serializable {
 		this.email = email;
 	}
 
-	public String getAltesPasswort() {
-		return altesPasswort;
+	public String getOldPassword() {
+		return oldPassword;
 	}
 
-	public void setAltesPasswort(String altesPasswort) {
-		this.altesPasswort = altesPasswort;
+	public void setOldPassword(String oldPassword) {
+		this.oldPassword = oldPassword;
 	}
 
-	public String getNeuesPasswort() {
-		return neuesPasswort;
+	public String getNewPassword() {
+		return newPassword;
 	}
 
-	public void setNeuesPasswort(String neuesPasswort) {
-		this.neuesPasswort = neuesPasswort;
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
 	}
 
-	public String getPasswortBestätigen() {
-		return passwortBestätigen;
+	public String getPasswortConfirmation() {
+		return passwortConfirmation;
 	}
 
-	public void setPasswortBestätigen(String passwortBestätigen) {
-		this.passwortBestätigen = passwortBestätigen;
+	public void setPasswortConfirmation(String passwortConfirmation) {
+		this.passwortConfirmation = passwortConfirmation;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 }

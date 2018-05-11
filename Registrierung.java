@@ -13,87 +13,65 @@ import javax.ejb.Stateless;
 public class Registrierung implements Serializable {
 	private static final long serialVersionUID = 1L; 
 	private int id;
-	private String vorname;
-	private String nachname;
-	private String benutzername;
-	private String email;
-	private String passwort;
-	private String passwortBestätigen;
-	
-	public String getBenutzername() {
-		return benutzername;
-	}
-
-	public void setBenutzername(String benutzername) {
-		this.benutzername = benutzername;
-	}
-
-
-
-    /**#
-     * Default constructor. 
-     */
-    public Registrierung() {
-        // TODO Auto-generated constructor stub
-    }
-
-	public Registrierung(String vorname, String nachname, String benutzername,String email, String passwort,
-			String passwortBestätigen) {
+	private String firstname;
+	private String Lastname;
+	private String username;
+	public Registrierung(String firstname, String lastname, String username, String email,
+			String password, String passwordConfirmation) {
 		super();
-		this.vorname = vorname;
-		this.nachname = nachname;
-		this.benutzername = benutzername;
+		this.firstname = firstname;
+		Lastname = lastname;
+		this.username = username;
 		this.email = email;
-		this.passwort = passwort;
-		this.passwortBestätigen = passwortBestätigen;
+		this.password = password;
+		this.passwordConfirmation = passwordConfirmation;
 	}
-
-	public String getVorname() {
-		return vorname;
-	}
-
-	public void setVorname(String vorname) {
-		this.vorname = vorname;
-	}
-
-	public String getNachname() {
-		return nachname;
-	}
-
-	public void setNachname(String nachname) {
-		this.nachname = nachname;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPasswort() {
-		return passwort;
-	}
-
-	public void setPasswort(String passwort) {
-		this.passwort = passwort;
-	}
-
-	public String getPasswortBestätigen() {
-		return passwortBestätigen;
-	}
-
-	public void setPasswortBestätigen(String passwortBestätigen) {
-		this.passwortBestätigen = passwortBestätigen;
-	}
-
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
+	public String getFirstname() {
+		return firstname;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	public String getLastname() {
+		return Lastname;
+	}
+	public void setLastname(String lastname) {
+		Lastname = lastname;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getPasswordConfirmation() {
+		return passwordConfirmation;
+	}
+	public void setPasswordConfirmation(String passwortConfirmation) {
+		this.passwordConfirmation = passwortConfirmation;
+	}
+	private String email;
+	private String password;
+	private String passwordConfirmation;
+	
+
 
 }

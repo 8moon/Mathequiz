@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Thomas
-  Date: 26.04.2018
-  Time: 11:15
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -26,27 +20,33 @@
 </nav>
 <form name="RegistrierungForm" action="RegistrierungServlet" method="post">
     <p>
-        Vorname : <br>
-        <input type="text" name="vorname" size="30" maxlength="30" required>
+        Firstname : <br>
+        <input type="text" name="firstname" size="30" maxlength="30" required>
     <p />
     <p>
-        Nachname : <br>
-        <input type="text" name="nachname" size="30" maxlength="30" required>
+        Lastname : <br>
+        <input type="text" name="lastname" size="30" maxlength="30" required>
     <p />
     <p>
-        Benutzername : <br>
-        <input type="text" name="benutzername" size="30" maxlength="30" required>
+        Username : <br>
+        <input type="text" name="username" size="30" maxlength="30" required>
+    <p>
+    	Gender : <br>
+    	<input type = "checkbox" name = "extra" id  ="c1" value = "man" checked>
+    	<label for= "c1"> Man</label> <br>
+    	<input type ="checkbox" name = "extra" id = "c2" value = "woman" checked>
+    	<label for = "c2">Woman</label> <br>
     <p />
     <p>
         E-Mail : <br>
         <input type="text" name="email" size="30" maxlength="30" required>
     <p />
     <p>
-        Passwort : <br>
+        Password : <br>
         <input type="password" name="passwort" size="30" maxlength="30" required required pattern = "123kHz">
     <p />
-    <p> Passwort bestätigen : <br>
-    <input type = "password" size="30" maxlength= "30" required required pattern = "123kHz."><p/>
+    <p> Password confirmed : <br>
+    <input type = "password" name = "password confirm" size="30" maxlength= "30" required required pattern = "123kHz."><p/>
     
     <button type="submit" name="action">registrieren</button>
     <footer>

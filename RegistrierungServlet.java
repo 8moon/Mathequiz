@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 import com.sun.research.ws.wadl.Request;
@@ -31,15 +32,22 @@ public class RegistrierungServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException{
 		final String id = request.getParameter("id");
-		final String vorname = request.getParameter("vorname");
-		final String nachname = request.getParameter("nachname");
-		final String benutzername = request.getParameter("benutzername");
+		final String firstname = request.getParameter("firstname");
+		final String lastname = request.getParameter("lastname");
+		final String username = request.getParameter("username");
 		final String email = request.getParameter("email");
-		final String passwort = request.getParameter("passwort");
-		final String passwortBestätigen = request.getParameter("passwortBestätigen");
+		final String password = request.getParameter("password");
+		final String passwordConfirmation = request.getParameter("passwordConfirmation");
 		
+//		if (!(username.equals(((Registrierung) ds).getUsername()))) {
+//			HttpSession session = request.getSession();
+//			session.setAttribute("username", username);
+//		}else {
+//			System.out.print(" Username schon vergeben");
+//			request.getRequestDispatcher("reigstrierung.jsp").include(request,response);
+//		}
 		// neues Objekt wo die Daten gespeichert werden in der Methode speichern
-		Registrierung proto = new Registrierung(vorname,nachname,benutzername,email,passwort,passwortBestätigen);
+		Registrierung proto = new Registrierung(firstname,lastname,username,email,password,passwordConfirmation);
 		speichern(proto);
 		
 		//weiterleiten an die jsp
@@ -54,27 +62,16 @@ public class RegistrierungServlet extends HttpServlet {
 	private void speichern(Registrierung form) throws ServletException{
 		String [] generatedKeys = new String[] {"id"};
 		try(Connection con = ds.getConnection();
-			PreparedStatement pstmt = con.prepareStatement("Insert into registrierung(vorname, nachname, benutzername,email, passwort, passwortBesätigen)VALUES(?,?,?,?,?,?)",generatedKeys)){
-			pstmt.setString(1, form.getVorname());
-			pstmt.setString(2, form.getNachname());
-			pstmt.setString(3, form.getBenutzername());
+			PreparedStatement pstmt = con.prepareStatement("Insert into user(firstname, lastname, username,email, password, passwordConfirmation)VALUES(?,?,?,?,?,?)",generatedKeys)){
+			pstmt.setString(1, form.getFirstname());
+			pstmt.setString(2, form.getLastname());
+			pstmt.setString(3, form.getUsername());
 			pstmt.setString(4, form.getEmail());
-			pstmt.setString(5, form.getPasswort());
-			pstmt.setString(6, form.getPasswortBestätigen());
+			pstmt.setString(5, form.getPassword());
+			pstmt.setString(6, form.getPasswordConfirmation());
 			pstmt.executeUpdate();
 			
-			// noch nicht ganz fertig die abfrage
-			// er soll überprüfen ob der benutzername schon in der db existiert
-			if(this.equals(form.getBenutzername())) {
-				System.out.println(" Dieser Benutzername existiert schon");
-			}else {
-			try(ResultSet rs= pstmt.getGeneratedKeys()){
-				while(rs.next()) {
-					form.setId(rs.getInt(1));
-				}
-			}
-				
-			}
+
 		}catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
