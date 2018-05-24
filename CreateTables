@@ -20,7 +20,7 @@ CREATE TABLE game(
   FOREIGN KEY (UserId) REFERENCES user (UserId) ON UPDATE CASCADE ON DELETE CASCADE
 );
 CREATE TABLE exercise(
-  GameId Bigint(20) PRIMARY KEY,
+  GameId Bigint(20) PRIMARY KEY AUTO_INCREMENT,
   ExerciseNumber int NOT null,
   Exercise varchar(500) not null,
   ExerciseSolution int NOT null,
