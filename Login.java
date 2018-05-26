@@ -1,21 +1,12 @@
 package DatenBean;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.SQLException;
 
-import javax.annotation.Resource;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
 
 /**
  * Session Bean implementation class Login
@@ -23,25 +14,56 @@ import javax.sql.DataSource;
 @Stateless
 @LocalBean
 public class Login implements Serializable {
-	private String benutzername;
-	private String passwort;
-		private static final long serialVersionUID = 1L;
-		public Login(String benutzername, String passwort) {
+	private static final long serialVersionUID = 1L;
+	private String username;
+	private String password;
+	private String firstname;
+	private String lastname;
+	private String email;
+	private Connection conn;
+	private Object session;
+	private HttpServletRequest request;
+	
+		public String getFirstname() {
+		return firstname;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+		public Login() {
 			super();
-			this.benutzername = benutzername;
-			this.passwort = passwort;
 		}
-		public String getBenutzername() {
-			return benutzername;
+		public Login (String username, HttpServletRequest request, Connection conn)throws SQLException 
+		{
+			this.username = username; 
+			this.request = request; 
+			this.conn = conn;
+			this.session = this.request.getSession();
 		}
-		public void setBenutzername(String benutzername) {
-			this.benutzername = benutzername;
+		
+		public String getUsername() {
+			return username;
 		}
-		public String getPasswort() {
-			return passwort;
+		public void setUsername(String username) {
+			this.username = username;
 		}
-		public void setPasswort(String passwort) {
-			this.passwort = passwort;
+		public String getPassword() {
+			return password;
+		}
+		public void setPassword(String password) {
+			this.password = password;
 		}
 		
 }
