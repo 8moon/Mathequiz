@@ -10,7 +10,7 @@ CREATE TABLE user(
   ProfilePictureFile MEDIUMBLOB
 );
 CREATE TABLE game(
-  GameId BIGINT(20) ,
+  GameId BIGINT(20) AUTO_INCREMENT,
   UserId BIGINT(20) ,
   GamingTime BIGINT NOT NULL,
   GameDate DATE NOT NULL ,
@@ -20,7 +20,7 @@ CREATE TABLE game(
   FOREIGN KEY (UserId) REFERENCES user (UserId) ON UPDATE CASCADE ON DELETE CASCADE
 );
 CREATE TABLE exercise(
-  GameId Bigint(20) PRIMARY KEY AUTO_INCREMENT,
+  GameId Bigint(20) PRIMARY KEY ,
   ExerciseNumber int NOT null,
   Exercise varchar(500) not null,
   ExerciseSolution int NOT null,
