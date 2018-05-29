@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <servlet>
+        <servlet-name>QuickGameServlet</servlet-name>
+        <servlet-class>servlets.QuickGameServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuickGameServlet</servlet-name>
+        <url-pattern>/QuickGameServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QuickGameCheckSolutionsServlet</servlet-name>
+        <servlet-class>servlets.QuickGameCheckSolutionsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuickGameCheckSolutionsServlet</servlet-name>
+        <url-pattern>/QuickGameCheckSolutionsServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>testServlet</servlet-name>
+        <servlet-class>servlets.testServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>testServlet</servlet-name>
+        <url-pattern>/testServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>RefreshScoreboardServlet</servlet-name>
+        <servlet-class>servlets.RefreshScoreboardServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RefreshScoreboardServlet</servlet-name>
+        <url-pattern>/RefreshScoreboardServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ContactContentServlet</servlet-name>
+        <servlet-class>servlets.ContactContentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContactContentServlet</servlet-name>
+        <url-pattern>/ContactContentServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RefreshSupportPageServlet</servlet-name>
+        <servlet-class>servlets.RefreshSupportPageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RefreshSupportPageServlet</servlet-name>
+        <url-pattern>/RefreshSupportPageServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>servlets.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>servlets.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ProfilServlet</servlet-name>
+        <servlet-class>servlets.ProfilServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProfilServlet</servlet-name>
+        <url-pattern>/ProfilServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>RegistrierungServlet</servlet-name>
+        <servlet-class>servlets.RegistrierungServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegistrierungServlet</servlet-name>
+        <url-pattern>/RegistrierungServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>SearchServlet</servlet-name>
+        <servlet-class>servlets.SearchServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchServlet</servlet-name>
+        <url-pattern>/SearchServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>RefreshAdminPageServlet</servlet-name>
+        <servlet-class>servlets.RefreshAdminPageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RefreshAdminPageServlet</servlet-name>
+        <url-pattern>/RefreshAdminPageServlet</url-pattern>
+    </servlet-mapping>
+    
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
