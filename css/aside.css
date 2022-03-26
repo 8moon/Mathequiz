@@ -1,0 +1,29 @@
+/*
+Erstellt von Theinert Thomas
+ */
+aside {
+    flex: 20%;
+    background-color: #00cc00;
+    padding: 20px;
+    font-size: 1em;
+}
+
+aside a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: left;
+}
+
+aside a:hover {
+    background-color: white;
+    color: black;
+}
+
+aside ul {
+    list-style-type: none;
+}
+
+aside ul li {
+    margin: 25px;
+}

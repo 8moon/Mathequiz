@@ -1,0 +1,6 @@
+<%--
+Erstellt von Theinert Thomas und Lu Hoan
+--%>
+<a href="${pageContext.request.contextPath}/html/contact.jsp">Kontakt</a>
+<a href="${pageContext.request.contextPath}/html/faq.jsp">FAQ</a>
+<a href="${pageContext.request.contextPath}/html/site_notice.jsp">Impressum</a>

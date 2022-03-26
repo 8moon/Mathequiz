@@ -1,0 +1,26 @@
+/*
+Erstellt von Kahraman Ali
+ */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th {
+    height: 50px;
+    background-color: #ff9900;
+    color: black;
+}
+
+td {
+    background-color: #ffff99;
+    color: black;
+}
+
+th, td {
+    padding: 15px;
+}

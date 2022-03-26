@@ -1,0 +1,41 @@
+/* Erstellt von Hoan Lu
+https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_animate3*/
+
+.divLogin {
+	width: 70%;
+	height: 100px;
+	float: left;
+	padding: 20px;
+	border: 1px solid yellow;
+}
+
+#LogPic {
+	width: 30%;
+	float: left;
+	padding: 20px;
+	height: auto;
+	border: 1px solid yellow;
+}
+label{
+	font-size : 1em;
+	font-weight: bold;
+}
+input{
+	height: 2em;
+}
+button {
+	color: #400000;
+}
+input:hover {
+	background: #ffffb3;
+	border: 2px solid #efe816;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+button:hover {
+	background: #00ff80;
+	border: 2px solid #008000;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.loginbutton{
+	text-align: left;
+}

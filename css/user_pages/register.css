@@ -1,0 +1,86 @@
+/* Erstellt von Hoan Lu*/
+label {
+	font-weight: bold;
+	min-width: 5em;
+	display: inline-block;
+	text-align: left;
+}
+
+
+input[type="radio"] {
+	width: 1.5em;
+	height: 1em
+}
+button {
+	color: #400000;
+}
+button:hover {
+	background: #00ff80;
+	border: 2px solid #008000;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Formular optisch stylen.		  *
+		 * Vorgehen: von innen nach auÃŸen */
+fieldset {
+	min-width: 20%;
+	height: auto;
+	padding: 2em;
+	background: #ffff00;
+	border-radius: 25px;
+	border: none;
+	margin: 2em;
+}
+
+#pandaRegi {
+	width: 45%;
+	float: right;
+	padding: 20px;
+	height: auto;
+	border: 1px solid yellow;
+	padding-top: 1.5em;
+	padding-right: 2.5em;
+	margin-right: 8em;
+	margin-top: 2em;
+}
+
+legend {
+	background: #ffff00;
+	padding: 0.2em;
+	border: none;
+	border-radius: 25px;
+	font-weight: bold;
+	font-size: 2.5em
+}
+
+/* Interaktionen über Pseudoklassen */
+input:hover {
+	background: #ffffb3;
+	border: 2px solid #efe816;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+	background: #00ff80;
+	border: 2px solid #008000;
+}
+
+input:required+label::after {
+	color: red;
+	content: " *";
+}
+
+input[type='email']:valid+label::after {
+	color: green;
+	content: " ✓";
+}
+
+input[type='text']:valid+label::after {
+	color: green;
+	content: " ✓";
+}
+
+input[type='password']:valid+label::after {
+	color: green;
+	content: " ✓";
+}

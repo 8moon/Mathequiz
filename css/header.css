@@ -1,0 +1,13 @@
+/*
+Erstellt von Theinert Thomas
+ */
+header {
+    width: 100%;
+    height: 120px;
+    text-align: center;
+    line-height: 0px;
+    padding: 40px;
+    color: #730099;
+    background: deepskyblue url("../img/mathquiz_logo.jpg") no-repeat;
+    background-size: contain;
+}

@@ -1,0 +1,26 @@
+/*
+Erstellt von Kahraman Ali
+ */
+
+
+input[type=button] {
+	
+	border-radius: 4px;
+        background-color: orange;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        padding: 10px;
+        width: 300px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+}
+input:hover {
+	background: #00ff80;
+        border: 2px solid #008000;
+}
+
+input:active {
+	 background: #8f8f8f;
+}

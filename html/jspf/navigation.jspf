@@ -1,0 +1,22 @@
+<%--
+Erstellt von Theinert Thomas und Lu Hoan
+--%>
+<a href="${pageContext.request.contextPath}/index.jsp">Startseite</a>
+<c:if test = "${not empty user}">
+    <a href="${pageContext.request.contextPath}/html/gaming_pages/user_game.jsp">Spieleseite</a>
+</c:if>
+<a href="${pageContext.request.contextPath}/RefreshScoreboardServlet">Bestenliste</a>
+<a href="${pageContext.request.contextPath}/RefreshForumTopicsPageServlet">Forum des Mathequiz</a>
+<c:if test="${empty user}">
+    <a href="${pageContext.request.contextPath}/html/user_pages/login.jsp">Anmeldung</a>
+    <a href="${pageContext.request.contextPath}/html/user_pages/register.jsp">Registrierung</a>
+</c:if>
+<c:if test = "${not empty user}">
+    <a href="${pageContext.request.contextPath}/LogoutServlet">Abmeldung</a>
+</c:if>
+<c:if test = "${user.userGroup eq 'support' || user.userGroup eq 'administration'}">
+    <a href="${pageContext.request.contextPath}/RefreshSupportPageServlet">Support Tickets</a>
+</c:if>
+<c:if test = "${user.userGroup eq 'administration'}">
+    <a href="${pageContext.request.contextPath}/RefreshAdminPageServlet">Admin Page</a>
+</c:if>

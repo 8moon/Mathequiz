@@ -1,0 +1,43 @@
+/*
+Erstellt von Theinert Thomas
+ */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){
+    background-color: #ffff99
+}
+
+tr:nth-child(odd) {
+    background-color: #e6e600;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+table button {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    color: black;
+    width: auto;
+    box-shadow: none;
+}
+
+table button:hover {
+    background: orange;
+    color: white;
+    border: 2px solid #000000;
+}

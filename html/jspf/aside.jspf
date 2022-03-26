@@ -1,0 +1,20 @@
+<%--
+Erstellt von Theinert Thomas und Lu Hoan
+--%>
+<c:choose>
+    <c:when test="${not empty user}">
+        <ul>
+            <li><a href="${pageContext.request.contextPath}/html/user_pages/profile.jsp">${user.username} Profil</a></li>
+            <li><a href="${pageContext.request.contextPath}/html/gaming_pages/quick_game.jsp">Schnelles Spiel</a></li>
+            <li><a href="${pageContext.request.contextPath}/html/gaming_pages/user_game.jsp">Spieleseite</a></li>
+            <li><a href="${pageContext.request.contextPath}/LetztesSpielAnzeigenServlet">Letztes Spiel</a></li>
+            <li><a href="${pageContext.request.contextPath}/LetztenZehnSpieleServlet">Letzte 10 Spiele</a></li>
+        </ul>
+    </c:when>
+    <c:otherwise>
+        <ul>
+            <li><a href="${pageContext.request.contextPath}/html/user_pages/login.jsp">Anmeldung</a></li>
+            <li><a href="${pageContext.request.contextPath}/html/gaming_pages/quick_game.jsp">Schnelles Spiel</a></li>
+        </ul>
+    </c:otherwise>
+</c:choose>

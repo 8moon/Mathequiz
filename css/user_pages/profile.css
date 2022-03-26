@@ -1,0 +1,86 @@
+/* Erstellt von Hoan Lu
+https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_animate3*/
+label {
+	font-weight: bold;
+}
+
+input {
+	width: 25em;
+    height: 2em;
+}
+button {
+	color: #400000;
+}
+fieldset {
+	min-width: 100%;
+	height: auto;
+	padding: 2em;
+	background: #ffff00;
+	border-radius: 25px;
+	border: none;
+	margin: 2em;
+}
+
+#panda {
+	max-width: 50%;
+	padding: 4em;
+	height: auto;
+	border: 1px solid yellow;
+	padding-top: 0em;
+	padding-right: 2.5em;
+	padding-left: 1em;
+	float: right;
+	margin-right: 9em;
+}
+
+#profilpic {
+	max-width: 100%;
+	padding: 4em;
+	height: auto;
+	border: 1px solid yellow;
+	padding-top: 1.5em;
+	padding-right: 2.5em;
+	margin-right: 2em;
+	margin-top: 2em;
+}
+
+legend {
+	background: #ffff00;
+	padding: 0.2em;
+	border: none;
+	border-radius: 25px;
+	font-weight: bold;
+	font-size: 2.5em;
+}
+
+input:hover {
+	background: #ffffb3;
+	border: 2px solid #efe816;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+	background: #00ff80;
+	border: 2px solid #008000;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+input:required+label::after {
+	color: red;
+	content: " *";
+}
+
+input[type='email']:valid+label::after {
+	color: green;
+	content: " ✓";
+}
+
+input[type='password']:valid+label::after {
+	color: green;
+	content: " ✓";
+}
+
+input[type='text']:valid+label::after {
+	color: green;
+	content: " ✓";
+}

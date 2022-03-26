@@ -1,0 +1,22 @@
+/*
+Erstellt von Theinert Thomas
+ */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    height: 10%;
+}
+
+footer a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+footer a:hover {
+    background-color: white;
+    color: black;
+}
